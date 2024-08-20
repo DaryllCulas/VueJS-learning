@@ -3,22 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
   </head>
-  <body>
+  <body class="h-full grid place-items-center">
+    <h1>Custom View Components</h1>
     <div id="app">
-      <app-button></app-button>
+      <app-button>Submit</app-button>
     </div>
     <script>
       let app = {
         components: {
           "app-button": {
-            mounted() {
-              alert("Hello World");
+            template: `<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded px-5 py-2 disabled:cursor-not-allowed" v-bind:disabled="processing">
+              <slot />
+              </button>`,
+            data() {
+              return {
+                processing: true,
+              };
             },
           },
         },
       };
+
+      Vue.createApp(app).mount("#app");
     </script>
   </body>
 </html>
