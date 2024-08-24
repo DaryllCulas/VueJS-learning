@@ -28,6 +28,13 @@ export default {
         completed: this.assignments.filter(assignments => assignments.complete)
       }
     }
+  },  
+  created() {
+    fetch('http://localhost:3001/assignments')
+    .then(response => response.json())
+    .then(fetchAssignmentData => {
+      this.assignments = fetchAssignmentData;
+    });
   },
 
   methods: {
