@@ -4,18 +4,25 @@ import AssignmentCreate from './AssignmentCreate.js'
 export default {
   components: { AssignmentList, AssignmentCreate },
   template: `
-    <section class="space-y-5">
-        <AssignmentList v-bind:assignments="filters.inProgress" title="In progress"/>
-        <AssignmentList v-bind:assignments="filters.completed" title="Completed"/>
+    <section class="flex gap-8">
+        <AssignmentList v-bind:assignments="filters.inProgress" title="In progress">
         <AssignmentCreate v-on:add="add"></AssignmentCreate>
+        </AssignmentList>
+
+        <div v-show="showCompleted">
+            <AssignmentList
+              v-bind:assignments="filters.completed" 
+              title="Completed" canToggle
+              v-on:toggle="showCompleted = !showCompleted"
+            ></AssignmentList>
+        </div>
  
     </section>
-   
-   
     `,
   data () {
     return {
       assignments: [],
+      showCompleted: true
      
     }
   },
