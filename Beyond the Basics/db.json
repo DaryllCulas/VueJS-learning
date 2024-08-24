@@ -1,0 +1,28 @@
+{
+    "assignments": [
+        { 
+            "name": "Finish project", 
+            "completed": false,
+            "id": 1,
+            "tag": "science" 
+        },
+        { 
+            "name": "Read Chapter 4", 
+            "completed": false,
+            "id": 2,
+            "tag": "math" 
+        },
+        { 
+            "name": "Playing Dota", 
+            "completed": false,
+            "id": 3,
+            "tag": "Entertainment" 
+        },
+        { 
+            "name": "Coding project", 
+            "completed": false,
+            "id": 4,
+            "tag": "science" 
+        }
+    ]
+}
