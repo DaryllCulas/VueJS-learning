@@ -1,7 +1,19 @@
+<script>
+import { useFlash } from '@/composables/useFlash'
+
+export default {
+  setup() {
+    let { flash } = useFlash()
+
+    return { flash }
+  }
+}
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an contact page</h1>
-  </div>
+  <p>
+    <button @click="flash('Contact', 'This is contact')">Click Me</button>
+  </p>
 </template>
 
 <style>

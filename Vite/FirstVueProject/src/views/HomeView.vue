@@ -1,29 +1,17 @@
 <script>
-import TheWelcome from '../components/TheWelcome.vue'
-import { ref } from 'vue'
+import { useFlash } from '@/composables/useFlash'
 
 export default {
-  components: { TheWelcome },
-
   setup() {
-    const count = ref(0)
+    let { flash } = useFlash()
 
-    function increment() {
-      count.value++
-    }
-
-    return {
-      count,
-      increment
-    }
+    return { flash }
   }
 }
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-    <p>{{ count }}</p>
-    <button @click="increment"></button>
+    <button @click="flash('Home', 'This is home')">Click Me</button>
   </main>
 </template>
