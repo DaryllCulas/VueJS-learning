@@ -1,12 +1,22 @@
-<script setup>
+<script>
 import TheWelcome from '../components/TheWelcome.vue'
+import { onMounted, ref } from 'vue'
 
-// eslint-disable-next-line no-undef
-let message = $ref('Hello World')
+export default {
+  components: { TheWelcome },
 
-setTimeout(() => {
-  message = 'I have been changed'
-}, 2000)
+  setup() {
+    onMounted(() => {
+      alert('Hi there')
+    })
+
+    let message = ref('Hello World')
+
+    return {
+      message
+    }
+  }
+}
 </script>
 
 <template>
