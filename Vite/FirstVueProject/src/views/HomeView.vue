@@ -1,8 +1,8 @@
 <script setup>
 import { useStorage } from '@/composables/useStorage'
 
-let food = useStorage('food', 'pizza')
-let age = useStorage('age')
+let food = useStorage('food', 'Rice')
+let age = useStorage('age', 20)
 </script>
 
 <template>
