@@ -8,12 +8,20 @@ watch(food, (val) => {
   write('food', val)
 })
 
+watch(age, (val) => {
+  write('age', val)
+})
+
 function write(key, value) {
   localStorage.setItem(key, value)
 }
 
 setTimeout(() => {
-  food.value = 'changed'
+  food.value = 'food changed'
+}, 2000)
+
+setTimeout(() => {
+  age.value = 'age changed'
 }, 2000)
 </script>
 
