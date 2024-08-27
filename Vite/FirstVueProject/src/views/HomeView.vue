@@ -1,19 +1,20 @@
 <script>
 import TheWelcome from '../components/TheWelcome.vue'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
 export default {
   components: { TheWelcome },
 
   setup() {
-    onMounted(() => {
-      alert('Hi there')
-    })
+    const count = ref(0)
 
-    let message = ref('Hello World')
+    function increment() {
+      count.value++
+    }
 
     return {
-      message
+      count,
+      increment
     }
   }
 }
@@ -22,9 +23,7 @@ export default {
 <template>
   <main>
     <TheWelcome />
-
-    <p>{{ message }}</p>
-
-    <input type="text" v-model="message" />
+    <p>{{ count }}</p>
+    <button @click="increment"></button>
   </main>
 </template>
