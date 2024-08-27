@@ -1,17 +1,31 @@
-<script>
-import { useFlash } from '@/composables/useFlash'
+<script setup>
+import { ref, watch } from 'vue'
 
-export default {
-  setup() {
-    let { flash } = useFlash()
+let food = ref(localStorage.getItem('food'))
+let age = ref(localStorage.getItem('age'))
 
-    return { flash }
-  }
+watch(food, (val) => {
+  write('food', val)
+})
+
+function write(key, value) {
+  localStorage.setItem(key, value)
 }
+
+setTimeout(() => {
+  food.value = 'changed'
+}, 2000)
 </script>
 
 <template>
   <main>
-    <button @click="flash('Home', 'This is home')">Click Me</button>
+    <p>
+      What is your favorite food?
+      <input type="text" v-model="food" />
+    </p>
+    <p>
+      How old are you?
+      <input type="text" v-model="age" />
+    </p>
   </main>
 </template>
