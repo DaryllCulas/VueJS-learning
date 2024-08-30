@@ -3,6 +3,10 @@ import TabbableTextArea from '@/components/TabbableTextArea.vue'
 import { ref } from 'vue'
 
 let comment = ref('test value')
+
+setTimeout(() => {
+  comment.value = 'it works'
+}, 2000)
 </script>
 
 <template>
