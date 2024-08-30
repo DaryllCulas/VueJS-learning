@@ -1,27 +1,14 @@
-<script>
-import { useFlash } from '@/composables/useFlash'
+<script setup>
+import TabbableTextArea from '@/components/TabbableTextArea.vue'
+import { ref } from 'vue'
 
-export default {
-  setup() {
-    let { flash } = useFlash()
-
-    return { flash }
-  }
-}
+let comment = ref('test value')
 </script>
 
 <template>
-  <p>
-    <button @click="flash('Contact', 'This is contact')">Click Me</button>
-  </p>
+  <main>
+    <form>
+      <TabbableTextArea v-model="comment" style="width: 100%; height: 300px" />
+    </form>
+  </main>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
