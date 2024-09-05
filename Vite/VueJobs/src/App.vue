@@ -1,5 +1,5 @@
 
 <template>
-  <h1>Hello Vue Jobs</h1>
+  <h1 class="text-2xl text-red-600">Hello Vue Jobs</h1>
 </template>
 
