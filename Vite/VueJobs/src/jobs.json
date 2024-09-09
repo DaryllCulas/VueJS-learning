@@ -97,6 +97,20 @@
         "contactEmail": "bikudohut@mailinator.com",
         "contactPhone": "+1 (544) 687-4915"
       }
+    },
+    {
+      "id": "b342",
+      "title": "Cyrus Clay",
+      "type": "Part-Time",
+      "location": "Ipsam repellendus M",
+      "description": "Quaerat quia ea aut ",
+      "salary": "$100K - $125K",
+      "company": {
+        "name": "Strickland Barber Plc",
+        "description": "Omnis natus sit ulla",
+        "contactEmail": "fokubu@mailinator.com",
+        "contactPhone": "+1 (935) 481-1527"
+      }
     }
   ]
 }
