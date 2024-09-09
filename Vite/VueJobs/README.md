@@ -1,4 +1,6 @@
-# VueJobs
+# VueJobs by Traversy Media
+Watch [VueJobs](https://www.youtube.com/watch?v=VeNfHj6MhgA/)
+
 
 This template should help get you started developing with Vue 3 in Vite.
 
